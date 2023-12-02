@@ -10,7 +10,7 @@ public class Employee extends Company{
     private String profession = "Undefined";//profession
     //constant
     private final double RATE_INCREASE = 0.0100; //rate increase
-    private final double STARTING_SALARY = 0.00; //Starting salary
+    private final double STARTING_SALARY = 40000.00; //Starting salary
     //start of default constructor
     public Employee(){
     } //end of default constructor
@@ -22,7 +22,7 @@ public class Employee extends Company{
         nCompanyYear = 0;
         sEmployeeId = PREFIX + ++nId;
     }//end of first calc
-    //second Employee overloader calc
+    //second Employee overloader calc (provided by professor)
     public Employee(String sFirstName, String sLastName, int nYearsAtCompany, String sProfession) {
         this.sFirstName = sFirstName;
         this.sLastName = sLastName;
@@ -30,15 +30,15 @@ public class Employee extends Company{
         this.nCompanyYear = nCompanyYear;
         sEmployeeId = PREFIX + ++nId;
         setdDefaultSalary();
-    }//end of second calc
-    //third Employee overloader calc
+    }//end of second calc (provided by professor)
+    //third Employee overloader calc (provided by professor)
     public Employee(String sFirstName, String sLastName, int nYearsAtCompany) {
         this.sFirstName = sFirstName;
         this.sLastName = sLastName;
         new Email(sFirstName, sLastName, this);
         this.nCompanyYear = nCompanyYear;
         sEmployeeId = PREFIX + ++nId;
-    }//end of third calc
+    }//end of third calc (provided by professor)
     //start of First Name getter
     public String getsFirstName() {
         return sFirstName;
@@ -84,9 +84,10 @@ public class Employee extends Company{
     }//end of employee ID getter
     //start of calculation
     protected double calculateSalary(double dSalary, int nYears, double dRate) {
+        //start of calculating salary
         if (nYears > 0) {
             return calculateSalary(dSalary + (dSalary * dRate), --nYears, dRate);
-        }
+        }//end of calculating salary
         return dSalary;
     }//end of calculation
     //start of profession getter
